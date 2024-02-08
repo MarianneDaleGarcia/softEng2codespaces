@@ -1,0 +1,41 @@
+ORDER.JAVA
+public class Order{
+    private Double order;
+    private String paymentType;
+
+    public Order (Double orderAmount, Srting paymentType){
+        this.orderAmount = orderAmount;
+        this.paymentType = paymentType;
+
+    }
+
+    //3 types of payments; GCash, Maya, Cash
+    public String calculatePayment(){
+        String output = new String();
+        if (paymentType.equals("GCash")){
+            output += "Payment is GCash\n";
+            output += "Energy for trees: 10 points";
+
+        } else if(paymentType.equals("Maya")){
+            output += "Payment is Maya\n";
+            output += "You will receive additional 1% interest on Savings";
+        } else { 
+            output += "Payment is Cash\n";
+            output += "No incentives;"
+        }
+        
+        return "Your order amount is " + orderAmount + "\n" +
+            output;
+    }
+}
+
+ORDERDEMO.JAVA
+
+public class OrderDemo{
+    public static void main(String[] args){
+
+        Order order = new Order(1200.00, "GCash");
+
+        System.out.println(order.calculatePayment());
+    }
+}
